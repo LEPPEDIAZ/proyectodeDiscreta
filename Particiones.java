@@ -1,5 +1,6 @@
 import java.util.Scanner;
-
+//Ana lucia Diaz Leppe 151378
+//se modifico el codigo de la universidad de princeton
 public class Particiones
 {
     public static void print(int[]p, int n)
@@ -8,6 +9,27 @@ public class Particiones
             System.out.print(p[i]+" ");
         System.out.println();
     }
+    
+    // prepara recursiva
+    public static void partition(int n) {
+        partition(n, n, "");
+    }
+    // si la n determinada anteriormente es igual a 0. se imprima la sumas acumulativas.
+    //En las sumas acumulativas se determino n-i. En donde a la n ingresada le voy restando i. 
+    public static void partition(int n, int max, String accumulated_sums) {
+        // 
+        if (n == 0) {
+            System.out.println(accumulated_sums);
+            return;
+        }
+        // recursive
+        int i;
+        for (i = Math.min(max, n); i >= 1; i--) {
+            partition(n-i, i, accumulated_sums + " " + i);
+        }
+    }
+    //codigo para generar la particion se realizo con un while con el objetivo que se va acumulando 
+    //cada sumando de la particion 
     public static void generatePartition(int n)
     {
         int []p = new int[n+n];
@@ -36,13 +58,14 @@ public class Particiones
             k++;
         }
     }
+    //pedir valores en el main. 
     public static void main(String args[])
     {
         System.out.println("Particiones de un numero entero");
         System.out.println("Ingresa el numero entero:");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        generatePartition(n);
+        partition(n);
         sc.close();
     }
 }
