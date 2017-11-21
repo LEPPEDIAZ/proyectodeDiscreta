@@ -1,10 +1,8 @@
 import java.util.Scanner;
 //Ana lucia Diaz Leppe 151378
 //Byron Andrés Mota Hernández 15246		
-public class Particiones
-{
-    public static void print(int[]p, int n)
-    {
+public class Particiones{
+    public static void print(int[]p, int n){
         for(int i=0; i<n; i++)
             System.out.print(p[i]+" ");
         System.out.println();
@@ -43,12 +41,10 @@ public class Particiones
         int []p = new int[n+n];
         int k = 0;
         p[k] = n;
-        while(true)
-        {
+        while(true){
             print(p, k=1);
             int rem_value = 0;
-            while(k >= 0 && p[k] == 1)
-            {
+            while(k >= 0 && p[k] == 1){
                 rem_value += p[k];
                 k--;
             }
@@ -56,8 +52,7 @@ public class Particiones
                 return;
             p[k]--;
             rem_value++;
-            while(rem_value > p[k])
-            {
+            while(rem_value > p[k]){
                 p[k+1] = p[k];
                 rem_value -= p[k];
                 k++;
@@ -67,8 +62,7 @@ public class Particiones
         }
     }
     //pedir valores en el main. 
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
         System.out.println("Particiones de un numero entero");
         System.out.println("Ingresa el numero entero:");
         Scanner sc = new Scanner(System.in);
