@@ -1,6 +1,5 @@
 import java.util.Scanner;
 //Ana lucia Diaz Leppe 151378
-//se modifico el codigo de la universidad de princeton
 public class Particiones
 {
     public static void print(int[]p, int n)
@@ -14,7 +13,7 @@ public class Particiones
     public static void partition(int n) {
         partition(n, n, "");
     }
-    // si la n determinada anteriormente es igual a 0. se imprima la sumas acumulativas.
+    // si la n determinada anteriormente es diferente a 0. se imprima la sumas acumulativas.
     //En las sumas acumulativas se determino n-i. En donde a la n ingresada le voy restando i. 
     public static void partition(int n, int max, String accumulated_sums) {
         // 
